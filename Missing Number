@@ -1,0 +1,50 @@
+You are given all numbers between 1,2,\ldots,n except one. Your task is to find the missing number.
+Input
+The first input line contains an integer n.
+The second line contains n-1 numbers. Each number is distinct and between 1 and n (inclusive).
+Output
+Print the missing number.
+Constraints
+
+2 \le n \le 2 \cdot 10^5
+
+Example
+Input:
+5
+2 3 1 5
+
+Output:
+4
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+
+int main(){
+    int n;
+    
+    
+    if (scanf("%d", &n) != 1) {
+    // Manejo de error, por ejemplo:
+    fprintf(stderr, "Error al leer el número\n");
+    return 1;
+}
+// Cast a long long antes de multiplicar
+    long long sumatoria = ((long long)n * (n + 1)) / 2;
+ long long suma=0;
+ int  num;   
+
+    
+    for(int i =0; i<n-1; i++){
+        if(scanf("%d", &num)!=1){
+            return 1;
+        }
+        suma += num;
+    }
+   
+
+printf("%lld", sumatoria-suma);
+    
+
+return 0;
+}
