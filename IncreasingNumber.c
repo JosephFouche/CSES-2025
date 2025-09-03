@@ -26,17 +26,17 @@ int main() {
     int n;
 
     // Leer cantidad de elementos
-    if (scanf("%d", &n) != 1) {
+    if (scanf("%d", &n) != 1) {//si metes numero entero valido
         printf("Error al leer n\n");
         return 1;
     }
 
-    if (n < 1 || n > 200000) {
+    if (n < 1 || n > 200000) {//numero entero mayor a 1 y menor 200000
         printf("Fuera de rango\n");
         return 1;
     }
 
-    int vector[n];
+    int vector[n];//vector que va almcacenar los elementos
     long long totalCambios = 0;  // usar long long porque la suma puede ser grande
 
     // Leer elementos
