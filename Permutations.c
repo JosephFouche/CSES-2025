@@ -23,3 +23,49 @@ Input:
 Output:
 NO SOLUTION
 */
+# include<stdio.h>
+int main(){
+
+    int n;
+    
+
+    if(scanf("%d", &n)!=1){
+        printf("Error al leer numero\n ");
+        return 1;
+    }
+
+    //contraint mayor o igual a uno menor o igual a 1000000
+    if(n<1 || n > 1000000){
+        printf("Fuera de rango\n ");
+        return 1;
+    }
+    /**So the suggestion:
+
+If 
+n=1
+n=1, print 1.
+
+If 
+n=2‘or‘3
+n=2‘or‘3, print "No solution".
+
+Otherwise, print evens then odds. */
+
+if(n==1){
+    printf("1\n");
+}else if (n==2 || n==3){
+    printf("NO SOLUTION");
+
+}else{
+    //primeros los numeros pares
+    for(int i =2; i<=n; i= i+2){
+        printf("%d ",i);
+    }
+    //ahora impares
+    for(int i=1; i<=n; i = i+2){
+        printf("%d ",i);
+    }
+    printf("\n");
+}
+return 0;
+}
